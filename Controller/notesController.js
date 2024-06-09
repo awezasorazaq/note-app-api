@@ -1,6 +1,6 @@
 const db = require('../Config/db');
 
-exports.createNote = async (req, res) => {
+exports.createnote = async (req, res) => {
     try {
         const { title, content } = req.body;
         const userId = req.user.user_id;
@@ -12,7 +12,7 @@ exports.createNote = async (req, res) => {
     }
 };
 
-exports.editNote = async (req, res) => {
+exports.editnote = async (req, res) => {
     try {
         const { id } = req.params;
         const { title, content } = req.body;
@@ -25,7 +25,7 @@ exports.editNote = async (req, res) => {
     }
 };
 
-exports.getAllNotes = async (req, res) => {
+exports.getallnotes = async (req, res) => {
     try {
         const userId = req.user.user_id;
         const notes = await db('notes').select('*').where({ user_id: userId });
@@ -36,7 +36,7 @@ exports.getAllNotes = async (req, res) => {
     }
 };
 
-exports.deleteNote = async (req, res) => {
+exports.deletenote = async (req, res) => {
     try {
         const { id } = req.params;
         const userId = req.user.user_id;
