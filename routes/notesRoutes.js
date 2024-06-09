@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { createnote, editnote, getallnotes, deletenote } = require('../Controller/notesController');
-const authenticateUser = require('../Config/auth');
+const { createnote, editnote, getallnotes, deletenote } = require('../controller/notesController');
+const authenticateUser = require('../config/auth');
 
 router.post('/createnote', authenticateUser, createnote);
 router.put('/editnote/:id', authenticateUser, editnote);

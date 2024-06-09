@@ -4,8 +4,8 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const port = process.env.PORT || 4001;
 
-const userRouter = require('./Routes/userRoutes');
-const notesRoutes = require('./Routes/notesRoutes');
+const userRouter = require('./routes/userRoutes');
+const notesRoutes = require('./routes/notesRoutes');
 const corsOptions = {
     origin: true,
     credentials: true,
